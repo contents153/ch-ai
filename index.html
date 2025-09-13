@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 기반 기독교 문화 콘텐츠 제작 | 2025 석사과정</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony (Warm Neutrals with Deep Blue Accent) -->
+    <!-- Application Structure Plan: The SPA is redesigned to narrate the comprehensive student journey. It starts with the core vision, then explains the 'Three Roles' model, clarifies the core project theme (Digital Parables), presents the toolbox, explains the AI role assignment philosophy, provides a detailed production roadmap, visualizes the task focus, details deliverables, includes a link to class resources, and concludes with the reflection journal template. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: The entire curriculum -> Goal: Organize/Inform -> Viz/Method: A structured HTML table for the production plan -> Interaction: None (static clarity is prioritized) -> Justification: A detailed table is more informative and precise for a syllabus.
+        - Report Info: Module focus distribution -> Goal: Compare/Change -> Viz/Method: Horizontal Bar Chart -> Interaction: Hover tooltips -> Justification: Re-added to effectively visualize the shifting focus over the semester's four key modules. -> Library/Method: Chart.js (Canvas).
+        - Report Info: Final Deliverables & Reflection Journal -> Goal: Inform/Organize -> Viz/Method: Multi-column card layouts -> Justification: Breaks down complex information into digestible parts for better student understanding.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #F8F7F4; color: #333; }
+        .nav-link { transition: color 0.3s; }
+        .nav-link:hover { color: #2A4A7D; }
+        .tab-btn.active { background-color: #2A4A7D; color: #FFFFFF; }
+        .tab-btn { transition: all 0.3s; }
+        .table-cell { padding: 1rem; border: 1px solid #e2e8f0; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 400px; max-height: 500px; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-xl font-bold text-[#2A4A7D]">기독교문화콘텐츠생태계론</div>
+            <div class="hidden md:flex flex-wrap items-center justify-center gap-x-3 lg:gap-x-4 text-gray-600 text-xs lg:text-sm">
+                <a href="#vision" class="nav-link whitespace-nowrap">교육 비전</a>
+                <a href="#journey" class="nav-link whitespace-nowrap">창작가의 여정</a>
+                <a href="#theme" class="nav-link whitespace-nowrap">프로젝트 주제</a>
+                <a href="#tools" class="nav-link whitespace-nowrap">AI 스튜디오</a>
+                <a href="#roles" class="nav-link whitespace-nowrap">AI 역할 부여</a>
+                <a href="#roadmap" class="nav-link whitespace-nowrap">프로덕션 로드맵</a>
+                <a href="#deliverables" class="nav-link whitespace-nowrap">최종 결과물</a>
+                <a href="#journal" class="nav-link whitespace-nowrap">성찰일지</a>
+                <a href="#resources" class="nav-link whitespace-nowrap">수업 자료</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="vision" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-xl md:text-3xl font-extrabold text-[#2A4A7D] leading-tight">AI 시대의 크리스찬 크리에이티브 스튜디오</h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">2025년 하반기에 활성화된 Google AI Pro 생태계를 활용하여, 기독교 문화콘텐츠를 기획하고 제작하는 크리에이티브 디렉터가 되는 것을 목표로 합니다. AI를 창의적 파트너로 삼아 아이디어를 현실로 만드는 통합적 워크플로우를 함께 경험해 봅시다.</p>
+                <a href="#journey" class="mt-10 inline-block bg-[#2A4A7D] text-white font-bold py-3 px-8 rounded-full hover:bg-[#1E3A6B] transition duration-300">창작의 여정 시작하기</a>
+            </div>
+        </section>
+
+        <section id="journey" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">한 명의 크리에이터, 세 개의 디렉터십</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">이 수업에서 여러분 모두는 프로젝트 전체를 조망하는 총괄 디렉터가 되어, 기획자, 아트 디렉터, 영상 디렉터의 세 가지 핵심 리더십을 순차적으로 모두 경험하며 하나의 완성된 프로젝트를 만들어갑니다.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="text-4xl mb-4">✍️</div>
+                        <h3 class="text-2xl font-bold mb-3">1. 기획자 (Planner)</h3>
+                        <p class="text-gray-600">"왜, 무엇을 만들 것인가?"<br>프로젝트의 전략적 방향과 내러티브의 뼈대를 세우는 역할. 아이디어를 발상하고 세상과 소통할 전략을 수립합니다.</p>
+                        <p class="mt-4 font-semibold text-sm text-[#2A4A7D]">최종 결과물: 프로젝트 기획서</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h3 class="text-2xl font-bold mb-3">2. 아트 디렉터 (Art Director)</h3>
+                        <p class="text-gray-600">"어떻게 보여줄 것인가?"<br>프로젝트의 시각 언어 전체를 총괄하는 역할. 프로젝트의 첫인상과 시각적 세계관을 구축합니다.</p>
+                         <p class="mt-4 font-semibold text-sm text-[#2A4A7D]">최종 결과물: 비주얼 가이드</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="text-4xl mb-4">🎬</div>
+                        <h3 class="text-2xl font-bold mb-3">3. 영상 디렉터 (Video Director)</h3>
+                        <p class="text-gray-600">"어떻게 구현할 것인가?"<br>최종 영상의 연출을 책임지는 역할. 기획과 아트를 바탕으로 관객의 마음을 움직이는 최종 결과물을 완성합니다.</p>
+                         <p class="mt-4 font-semibold text-sm text-[#2A4A7D]">최종 결과물: 최종 영상</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="theme" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">프로젝트 주제: 현대인을 위한 디지털 비유</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">우리의 창작은 '성경의 비유'라는 하나의 강력한 중심축에서 출발합니다. 마음에 각자의 Why를 품고, 머리와 손으로 What-Who-How를 구현하며, 비유에 담긴 진리를 현대의 언어로 번역합니다.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-3 text-[#2A4A7D]">WHY</h3>
+                        <p class="text-gray-600 text-sm">왜 비유인가? 복잡한 세상 속에서, 비유는 시대를 초월하여 인간의 근본적인 질문에 답하는 가장 강력한 스토리텔링 형식이기 때문입니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-3 text-[#2A4A7D]">WHAT</h3>
+                        <p class="text-gray-600 text-sm">무엇을 만드는가? 그저 성경 이야기의 재현이 아닌, 오늘 우리의 삶과 직접 연결되는 현대적 재해석을 통해 '디지털 비유'를 제시합니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-3 text-[#2A4A7D]">WHO</h3>
+                        <p class="text-gray-600 text-sm">누구를 위한 것인가? 막연한 대중이 아닌, 우리가 깊이 공감하고 소통하고 싶은 특정 '취향 그룹'의 마음에 가닿는 것을 목표로 합니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-3 text-[#2A4A7D]">HOW</h3>
+                        <p class="text-gray-600 text-sm">어떻게 만드는가? Google AI Pro 생태계를 창의적 파트너로 삼아, 비유의 깊이를 현대적인 감각과 스타일로 구현해냅니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="tools" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">통합 AI 크리에이티브 스튜디오</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Google AI Pro는 분절된 앱의 집합이 아닌, 아이디어 발상부터 최종 제작까지 모든 과정을 지원하는 하나의 완성된 디지털 스튜디오입니다.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-wrap justify-center gap-2 mb-8" id="tool-tabs">
+                        <button data-target="gemini" class="tab-btn active py-2 px-4 rounded-full bg-gray-200 text-gray-700">Gemini & NotebookLM</button>
+                        <button data-target="flow" class="tab-btn py-2 px-4 rounded-full bg-gray-200 text-gray-700">Flow & Vids</button>
+                        <button data-target="image" class="tab-btn py-2 px-4 rounded-full bg-gray-200 text-gray-700">ImageFX & Whisk</button>
+                        <button data-target="workspace" class="tab-btn py-2 px-4 rounded-full bg-gray-200 text-gray-700">Workspace AI</button>
+                    </div>
+                    <div id="tool-content" class="bg-white p-8 rounded-xl shadow-lg min-h-[280px]">
+                        <div id="gemini" class="tool-pane">
+                            <h3 class="text-2xl font-bold text-[#2A4A7D]">사고와 연구의 엔진</h3>
+                            <p class="mt-2 text-gray-600">모든 프로젝트의 시작점. 복잡한 성경 본문과 신학 자료를 분석하고, 현대 문화 트렌드와 연결하여 새로운 아이디어를 도출합니다. NotebookLM은 방대한 자료를 요약, 분석하여 기획의 깊이를 더하는 핵심 연구 비서입니다.</p>
+                        </div>
+                        <div id="flow" class="tool-pane hidden">
+                            <h3 class="text-2xl font-bold text-[#2A4A7D]">시네마틱 스토리텔링 엔진</h3>
+                            <p class="mt-2 text-gray-600">텍스트 시나리오를 영화적 영상으로 구현하는 핵심 제작 도구입니다. 전문적인 카메라 워크 지시, 일관된 캐릭터 유지, 네이티브 오디오 생성 등 정교한 연출이 가능합니다. Google Vids는 생성된 클립들을 조합하여 최종 영상을 완성합니다.</p>
+                        </div>
+                        <div id="image" class="tool-pane hidden">
+                            <h3 class="text-2xl font-bold text-[#2A4A7D]">시각적 아이디어 실험실</h3>
+                            <p class="mt-2 text-gray-600">프로젝트의 시각적 방향성을 설정하고 고품질 에셋을 제작합니다. Whisk는 이미지 레퍼런스를 통해 빠르게 비주얼 컨셉을 탐색하고, ImageFX는 최종적으로 사용될 고해상도 캐릭터, 배경, 포스터 등을 생성합니다.</p>
+                        </div>
+                        <div id="workspace" class="tool-pane hidden">
+                            <h3 class="text-2xl font-bold text-[#2A4A7D]">제작 관리 및 협업 플랫폼</h3>
+                            <p class="mt-2 text-gray-600">콘텐츠 제작 외 모든 과정을 효율화합니다. Google Docs에서 시나리오를, Slides에서 전문가 수준의 제안서를 AI가 자동으로 생성하고 디자인하여, 프로젝트 관리와 문서화 작업의 생산성을 극대화합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roles" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">AI에게 역할 부여하기: 가장 강력한 스위치</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">AI에게 역할을 부여하는 것은 AI의 방대한 지식 속에서 필요한 전문가를 정확히 소환하는 것입니다.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold mb-3 text-center text-[#2A4A7D]">1. 전문성의 '초점' 맞추기</h3>
+                        <p class="text-gray-600">AI는 그 자체로 '일반인'과 같습니다. 하지만 "너는 신학자야"라고 말하는 순간, AI는 해당 분야 전문가처럼 생각하고 답변합니다. 흐릿한 사진의 초점을 명확하게 맞추는 것과 같습니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold mb-3 text-center text-[#2A4A7D]">2. '톤앤매너'와 '스타일' 결정하기</h3>
+                        <p class="text-gray-600">'Z세대 분석가'는 재치있게, 'NGO 전문가'는 진정성 있게 말합니다. 역할에 맞는 목소리와 스타일을 갖추게 되어 훨씬 설득력 있는 결과물을 얻을 수 있습니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold mb-3 text-center text-[#2A4A7D]">3. 보이지 않는 '목표' 설정하기</h3>
+                        <p class="text-gray-600">'감독'은 감동을, '마케터'는 행동을 목표로 합니다. AI는 그 역할의 암묵적인 목표를 이해하고 결과물을 만들어, 더 수준 높은 결과물을 완성합니다.</p>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto bg-gray-100 p-6 rounded-xl">결론적으로, 역할을 부여하는 것은 AI를 단순한 <strong>'검색 엔진'</strong>에서 프로젝트 성공을 위한 <strong>'가상의 어벤져스 팀'</strong>으로 바꾸는 일입니다. 어떤 전문가를 소환하느냐에 따라 여러분의 창작물 수준이 결정됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">프로덕션 로드맵</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">프로젝트 완성을 위한 단계별 가이드입니다. 모듈별 과업 집중도에 따라 수업 내용은 유동적으로 운영됩니다.</p>
+                </div>
+                <div class="w-full overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 text-sm">
+                        <thead class="bg-gray-50 text-gray-600 uppercase">
+                            <tr>
+                                <th class="table-cell">주차</th>
+                                <th class="table-cell">핵심 목표</th>
+                                <th class="table-cell">[기획자 과업]</th>
+                                <th class="table-cell">[아트 디렉터 & 영상 디렉터 과업]</th>
+                                <th class="table-cell">주요 AI 도구</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr><td colspan="5" class="table-cell text-center font-bold bg-blue-50 text-[#2A4A7D]">Phase 1: 기초 공사 (1-4주차)</td></tr>
+                            <tr>
+                                <td class="table-cell text-center font-semibold">1주</td>
+                                <td class="table-cell">아이디어 발상 및 타겟 설정</td>
+                                <td class="table-cell">(1-1) 비유 선정 및 아이디어 브레인스토밍<br>(1-2) 타겟(취향 그룹) 설정 및 분석</td>
+                                <td class="table-cell">(1-3) [아트 디렉터] 무드보드(Mood Board) 제작하기</td>
+                                <td class="table-cell"><strong>기획:</strong> Gemini<br><strong>아트:</strong> Whisk, Google 이미지</td>
+                            </tr>
+                             <tr>
+                                <td class="table-cell text-center font-semibold">2주</td>
+                                <td class="table-cell">시각 컨셉 구체화</td>
+                                <td class="table-cell">(2-1) 시각 컨셉 브리프 작성</td>
+                                <td class="table-cell">(2-2) [아트 디렉터] 초기 컨셉 아트 3종 생성</td>
+                                <td class="table-cell"><strong>기획:</strong> Gemini, Workspace AI (Docs)<br><strong>아트:</strong> ImageFX</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-semibold">3주</td>
+                                <td class="table-cell">내러티브 구축</td>
+                                <td class="table-cell">(3-1) 3부작 시놉시스 및 캐릭터 아크 작성</td>
+                                <td class="table-cell">(3-2) [아트 디렉터] 주요 캐릭터 디자인 시안 생성</td>
+                                <td class="table-cell"><strong>기획:</strong> Gemini, NotebookLM<br><strong>아트:</strong> ImageFX</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-semibold">4주</td>
+                                <td class="table-cell">플랫폼 전략</td>
+                                <td class="table-cell">(4-1) 소셜 미디어 채널 전략 및 콘텐츠 캘린더 초안</td>
+                                <td class="table-cell">(4-2) [아트 디렉터] 프로젝트 로고/타이틀 디자인 시안 생성</td>
+                                <td class="table-cell"><strong>기획:</strong> Gemini, Workspace AI (Sheets)<br><strong>아트:</strong> ImageFX</td>
+                            </tr>
+                            <tr><td colspan="5" class="table-cell text-center font-bold bg-green-50 text-green-800">Phase 2: 설계 및 제작 (5-10주차)</td></tr>
+                             <tr>
+                                <td class="table-cell text-center font-semibold">5주</td>
+                                <td class="table-cell">기획/디자인 문서화 및 영상 사전 제작</td>
+                                <td class="table-cell">(5-1) '프로젝트 기획서' 초안으로 종합</td>
+                                <td class="table-cell">(5-2) [아트 디렉터] 컬러 팔레트, 타이포그래피 정의<br>(5-3) [영상 디렉터] 스토리보드 제작</td>
+                                <td class="table-cell"><strong>기획:</strong> Workspace AI (Docs)<br><strong>아트:</strong> Whisk, ImageFX<br><strong>영상:</strong> Gemini, ImageFX</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-semibold">6주</td>
+                                <td class="table-cell">첫 영상 클립 제작</td>
+                                <td class="table-cell">(6-1) '프로젝트 기획서' 초안 피어 피드백</td>
+                                <td class="table-cell">(6-2) [아트 디렉터] 주요 배경 컨셉 아트 제작<br>(6-3) [영상 디렉터] 첫 핵심 장면 클립 생성</td>
+                                <td class="table-cell"><strong>기획:</strong> Workspace AI (Docs 댓글)<br><strong>아트:</strong> ImageFX<br><strong>영상:</strong> Flow & Vids</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-semibold">7주</td>
+                                <td class="table-cell">홍보물 제작 및 1차 가편집</td>
+                                <td class="table-cell">(7-1) 피드백 반영, '프로젝트 기획서' 고도화</td>
+                                <td class="table-cell">(7-2) [아트 디렉터] 키 아트 포스터, SNS 템플릿 제작<br>(7-3) [영상 디렉터] 영상 1차 가편집</td>
+                                <td class="table-cell"><strong>기획:</strong> Workspace AI (Docs)<br><strong>아트:</strong> ImageFX, Workspace AI (Slides)<br><strong>영상:</strong> Vids</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-semibold">8주</td>
+                                <td class="table-cell font-bold">중간 발표</td>
+                                <td class="table-cell font-bold" colspan="2">기획/디자인/영상 파트별 진행 상황 및 중간 결과물 공유, 상호 피드백</td>
+                                <td class="table-cell"><strong>발표:</strong> Workspace AI (Slides)</td>
+                            </tr>
+                             <tr>
+                                <td class="table-cell text-center font-semibold">9주</td>
+                                <td class="table-cell">피드백 반영 및 추가 제작</td>
+                                <td class="table-cell">(9-1) 중간 발표 피드백 기반 기획안 최종 수정</td>
+                                <td class="table-cell">(9-2) [아트 디렉터] 피드백 기반 디자인 에셋 수정<br>(9-3) [영상 디렉터] 추가 영상 클립 생성</td>
+                                <td class="table-cell"><strong>기획:</strong> Workspace AI (Docs)<br><strong>아트:</strong> ImageFX<br><strong>영상:</strong> Flow & Vids</td>
+                            </tr>
+                             <tr>
+                                <td class="table-cell text-center font-semibold">10주</td>
+                                <td class="table-cell">디자인/영상 문서화 및 2차 편집</td>
+                                <td class="table-cell">(10-1) 최종 결과물 완성을 위한 개별 코칭</td>
+                                <td class="table-cell">(10-2) [아트 디렉터] '비주얼 가이드'로 최종 정리<br>(10-3) [영상 디렉터] 영상 2차 편집 및 자막 작업</td>
+                                <td class="table-cell"><strong>아트:</strong> Workspace AI (Slides/Docs)<br><strong>영상:</strong> Vids</td>
+                            </tr>
+                             <tr><td colspan="5" class="table-cell text-center font-bold bg-red-50 text-red-800">Phase 3: 후반 작업 및 완성 (11-14주차)</td></tr>
+                             <tr>
+                                <td class="table-cell text-center font-semibold">11-13주</td>
+                                <td class="table-cell">최종 결과물 완성 및 발표 준비</td>
+                                <td class="table-cell" colspan="2">개별 프로젝트 클리닉, 피어 피드백, 최종 후반 작업(사운드, 컬러 등) 및 발표 리허설</td>
+                                <td class="table-cell"><strong>영상:</strong> Vids, YouTube 오디오 보관함<br><strong>발표:</strong> Workspace AI (Slides)</td>
+                            </tr>
+                             <tr>
+                                <td class="table-cell text-center font-semibold">14주</td>
+                                <td class="table-cell font-bold">최종 발표</td>
+                                <td class="table-cell font-bold" colspan="3">개인별 최종 프로젝트 발표 (프로젝트 기획서, 비주얼 가이드, 최종 영상) 및 상호 평가</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="focus" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">모듈별 과업 집중도</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">학기 초반에는 기획과 아트 디렉팅의 비중이 높고, 후반으로 갈수록 영상 디렉팅에 집중하게 됩니다. 이 그래프는 시기별 역할의 상대적 중요성을 보여줍니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="chart-container">
+                        <canvas id="moduleFocusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deliverables" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">최종 프로젝트 결과물 상세</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">한 학기의 여정 끝에, 여러분은 세 파트로 구성된 하나의 통합된 프로젝트 포트폴리오를 완성하게 됩니다.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-2xl font-bold mb-4 text-center">✍️ 기획자: 프로젝트 기획서</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><strong>Part 1: 핵심 컨셉과 세계관</strong><br><span class="text-sm text-gray-500">로그라인, 기획 의도, 주제 분석, 톤앤매너</span></li>
+                            <li><strong>Part 2: 내러티브와 타겟</strong><br><span class="text-sm text-gray-500">캐릭터 아크, 3부작 시놉시스, 타겟 페르소나 분석</span></li>
+                            <li><strong>Part 3: 플랫폼 전략과 배포</strong><br><span class="text-sm text-gray-500">채널 전략, 콘텐츠 캘린더, 커뮤니티 참여 유도 방안</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-2xl font-bold mb-4 text-center">🎨 아트 디렉터: 비주얼 가이드</h3>
+                        <ul class="space-y-3 text-gray-700">
+                             <li><strong>Part 1: 핵심 비주얼 아이덴티티</strong><br><span class="text-sm text-gray-500">프로젝트 로고, 컬러 팔레트, 타이포그래피, 그래픽 모티프</span></li>
+                            <li><strong>Part 2: 세계관 & 캐릭터 디자인</strong><br><span class="text-sm text-gray-500">주요 캐릭터 시트, 배경 컨셉 아트, 핵심 소품 디자인</span></li>
+                            <li><strong>Part 3: 적용 예시 및 홍보 에셋</strong><br><span class="text-sm text-gray-500">키 아트 포스터, 소셜 미디어 홍보물 템플릿</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-2xl font-bold mb-4 text-center">🎬 영상 디렉터: 최종 영상</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><strong>Part 1: 사전 제작 및 연출 계획</strong><br><span class="text-sm text-gray-500">연출 계획서, AI 프롬프트 시트, 스토리보드/샷 리스트</span></li>
+                            <li><strong>Part 2: 메인 프로덕션</strong><br><span class="text-sm text-gray-500">핵심 장면 클립 생성, 모션 그래픽 에셋, 60-90초 최종 영상</span></li>
+                            <li><strong>Part 3: 후반 작업 및 패키징</strong><br><span class="text-sm text-gray-500">사운드 디자인, 컬러 그레이딩, 최종 마스터 파일</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="journal" class="py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">AI 협업 플레이북: 성찰일지</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">AI와의 협업 과정에서 얻은 성공, 실패, 발견을 기록하며 자신만의 AI 협업 방법론을 찾아가는 공간입니다. 이 기록은 학기 말 여러분의 성장을 증명하는 핵심 포트폴리오가 될 것입니다.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#2A4A7D] border-b-2 border-gray-200 pb-2 mb-3">🎯 1. 오늘의 창작 과제</h3>
+                        <p class="text-gray-600">오늘 내가 AI와 함께 해결하고자 했던 구체적인 목표는 무엇이었나요?</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-[#2A4A7D] border-b-2 border-gray-200 pb-2 mb-3">💬 2. 나의 AI 파트너 & 대화 기록</h3>
+                        <p class="text-gray-600">사용한 핵심 도구, 가장 중요했던 프롬프트, 그리고 AI와의 대화는 어떻게 흘러갔나요?</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-[#2A4A7D] border-b-2 border-gray-200 pb-2 mb-3">✨ 3. 결과물 & 나의 발견</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li><strong>가장 성공적인 부분 (Wow Point):</strong> AI가 내 예상을 뛰어넘는 결과물을 보여준 순간이 있었나요?</li>
+                            <li><strong>가장 어려웠던 부분 (Pain Point):</strong> AI가 내 의도를 이해하지 못해 답답했던 순간은 언제였나요?</li>
+                            <li><strong>예상치 못한 발견 (Aha! Point):</strong> 원래 의도와는 달랐지만, 더 좋은 영감을 준 결과물이 있었나요?</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-[#2A4A7D] border-b-2 border-gray-200 pb-2 mb-3">✍️ 4. 더 깊은 성찰</h3>
+                        <p class="text-gray-600">이번 경험을 통해 AI에 대해, 나 자신에 대해, 그리고 창작과 신앙에 대해 무엇을 새롭게 배우고 느꼈나요?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">수업 자료 바로가기</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">수업에 필요한 핵심 가이드와 템플릿입니다. 링크를 클릭하여 바로 확인하고 사용하세요.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://docs.google.com/spreadsheets/d/1anAcYTrUDD9Gn9ZVN-ga9DDuB7qHTk0GNYzxLGiuLXs/edit?usp=sharing" target="_blank" class="bg-[#2A4A7D] text-white font-bold py-3 px-6 rounded-full hover:bg-[#1E3A6B] transition duration-300">프롬프트 가이드</a>
+                    <a href="https://docs.google.com/spreadsheets/d/13zPHoDOOG9QhprksxTbUEy-canjIX-YNpzrmUFYDBD0/edit?usp=sharing" target="_blank" class="bg-green-700 text-white font-bold py-3 px-6 rounded-full hover:bg-green-800 transition duration-300">성찰일지</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <p>2025학년도 2학기 기독교문화콘텐츠생태계론</p>
+            <p class="text-sm mt-2">최선 교수 | choisun@bu.ac.kr</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toolTabs = document.getElementById('tool-tabs');
+            const toolPanes = document.querySelectorAll('#tool-content .tool-pane');
+
+            if (toolTabs) {
+                toolTabs.addEventListener('click', function (e) {
+                    const button = e.target.closest('button');
+                    if (button) {
+                        const targetId = button.dataset.target;
+
+                        toolTabs.querySelectorAll('button').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        button.classList.add('active');
+
+                        toolPanes.forEach(pane => {
+                            if (pane.id === targetId) {
+                                pane.classList.remove('hidden');
+                            } else {
+                                pane.classList.add('hidden');
+                            }
+                        });
+                    }
+                });
+            }
+
+            const wrapLabel = (label, charLimit = 20) => {
+                if (label.length <= charLimit) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > charLimit) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) lines.push(currentLine);
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                return Array.isArray(label) ? label.join(' ') : label;
+            };
+            
+            const palette = {
+                blue: '#2A4A7D',
+                green: '#3A8E5A',
+                red: '#C04040'
+            };
+
+            const moduleFocusCtx = document.getElementById('moduleFocusChart');
+if (moduleFocusCtx) {
+    new Chart(moduleFocusCtx.getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: [
+                wrapLabel('Phase 1: 기초 및 컨셉 (1-4주차)'),
+                wrapLabel('Phase 2: 설계 및 제작 (5-8주차)'),
+                wrapLabel('Phase 2-2: 제작 심화 (9-11주차)'),
+                wrapLabel('Phase 3: 완성 및 발표 (12-14주차)')
+            ],
+            datasets: [{
+                label: '기획자 집중도', data: [40, 25, 15, 20], backgroundColor: palette.blue
+            }, {
+                label: '아트 디렉터 집중도', data: [35, 40, 25, 10], backgroundColor: palette.green
+            }, {
+                label: '영상 디렉터 집중도', data: [25, 35, 60, 70], backgroundColor: palette.red
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { x: { stacked: true, title: { display: true, text: '단계별 과업 집중도 (%)' } }, y: { stacked: true } },
+            plugins: {
+                title: { display: false },
+                tooltip: { callbacks: { title: tooltipTitleCallback } }
+            }
+        }
+    });
+}
+        });
+    </script>
+</body>
+</html>
+
