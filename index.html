@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Calm Harmony (Warm Neutrals with Deep Blue Accent) -->
-    <!-- Application Structure Plan: The SPA is redesigned to narrate the comprehensive student journey. It starts with the core vision, then explains the 'Three Roles' model, clarifies the core project theme (Digital Parables), presents the toolbox, explains the AI role assignment philosophy, provides a detailed production roadmap, visualizes the task focus, details deliverables, includes a link to class resources, and concludes with the reflection journal template. -->
+    <!-- Application Structure Plan: The SPA is redesigned to narrate the comprehensive student journey. It starts with the core vision, then explains the 'Three Roles' model, clarifies the core project theme (Digital Parables), presents the toolbox, explains the AI role assignment philosophy, provides a detailed production roadmap, visualizes the task focus, details deliverables, explains the 5-step creative process in a table, includes links to resources, and concludes with the reflection journal template. -->
     <!-- Visualization & Content Choices: 
         - Report Info: The entire curriculum -> Goal: Organize/Inform -> Viz/Method: A structured HTML table for the production plan -> Interaction: None (static clarity is prioritized) -> Justification: A detailed table is more informative and precise for a syllabus.
         - Report Info: Module focus distribution -> Goal: Compare/Change -> Viz/Method: Horizontal Bar Chart -> Interaction: Hover tooltips -> Justification: Re-added to effectively visualize the shifting focus over the semester's four key modules. -> Library/Method: Chart.js (Canvas).
@@ -32,7 +32,7 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="text-xl font-bold text-[#2A4A7D]">기독교문화콘텐츠생태계론</div>
-            <div class="hidden md:flex flex-wrap items-center justify-center gap-x-3 lg:gap-x-4 text-gray-600 text-xs lg:text-sm">
+            <div class="hidden md:flex flex-wrap items-center justify-center gap-x-2 lg:gap-x-3 text-gray-600 text-xs lg:text-sm">
                 <a href="#vision" class="nav-link whitespace-nowrap">교육 비전</a>
                 <a href="#journey" class="nav-link whitespace-nowrap">창작가의 여정</a>
                 <a href="#theme" class="nav-link whitespace-nowrap">프로젝트 주제</a>
@@ -40,6 +40,7 @@
                 <a href="#roles" class="nav-link whitespace-nowrap">AI 역할 부여</a>
                 <a href="#roadmap" class="nav-link whitespace-nowrap">프로덕션 로드맵</a>
                 <a href="#deliverables" class="nav-link whitespace-nowrap">최종 결과물</a>
+                <a href="#process" class="nav-link whitespace-nowrap">AI 시대 창작 과정</a>
                 <a href="#journal" class="nav-link whitespace-nowrap">성찰일지</a>
                 <a href="#resources" class="nav-link whitespace-nowrap">수업 자료</a>
             </div>
@@ -202,37 +203,37 @@
                                 <td class="table-cell text-center font-semibold">2주</td>
                                 <td class="table-cell">시각 컨셉 구체화</td>
                                 <td class="table-cell">(2-1) 시각 컨셉 브리프 작성</td>
-                                <td class="table-cell">(2-2) [아트 디렉터] 초기 컨셉 아트 생성</td>
-                                <td class="table-cell"><strong>기획:</strong> Gemini, Workspace AI (Docs)<br><strong>아트:</strong> ImageFX</td>
+                                <td class="table-cell">(2-2) [아트 디렉터] 초기(분위기) 컨셉 아트 3종 생성</td>
+                                <td class="table-cell"><strong>기획:</strong> Gemini, Docs<br><strong>아트:</strong> ImageFX</td>
                             </tr>
                             <tr>
                                 <td class="table-cell text-center font-semibold">3주</td>
                                 <td class="table-cell">내러티브 구축</td>
-                                <td class="table-cell">(3-1) 3부작 시놉시스 및 캐릭터 아크 작성</td>
+                                <td class="table-cell">(3-1) 컨셉 아트에서 영감을 받아 3부작 시놉시스 및 캐릭터 아크 작성</td>
                                 <td class="table-cell">(3-2) [아트 디렉터] 주요 캐릭터 디자인 시안 생성</td>
                                 <td class="table-cell"><strong>기획:</strong> Gemini, NotebookLM<br><strong>아트:</strong> ImageFX</td>
                             </tr>
                             <tr>
                                 <td class="table-cell text-center font-semibold">4주</td>
-                                <td class="table-cell">플랫폼 전략</td>
-                                <td class="table-cell">(4-1) 소셜 미디어 채널 전략 및 콘텐츠 캘린더 초안</td>
-                                <td class="table-cell">(4-2) [아트 디렉터] 프로젝트 로고/타이틀 디자인 시안 생성</td>
-                                <td class="table-cell"><strong>기획:</strong> Gemini, Workspace AI (Sheets)<br><strong>아트:</strong> ImageFX</td>
+                                <td class="table-cell">포맷 및 전략 수립</td>
+                                <td class="table-cell">(4-1) 최종 포맷(예: 숏폼) 결정 및 소셜 미디어 채널 전략 초안 작성</td>
+                                <td class="table-cell">(4-2) [아트 디렉터] 주요 배경 컨셉 아트 제작</td>
+                                <td class="table-cell"><strong>기획:</strong> Gemini, Sheets<br><strong>아트:</strong> ImageFX</td>
                             </tr>
                             <tr><td colspan="5" class="table-cell text-center font-bold bg-green-50 text-green-800">Phase 2: 설계 및 제작 (5-10주차)</td></tr>
                              <tr>
                                 <td class="table-cell text-center font-semibold">5주</td>
-                                <td class="table-cell">기획/디자인 문서화 및 영상 사전 제작</td>
+                                <td class="table-cell">비주얼 시스템 구축</td>
                                 <td class="table-cell">(5-1) '프로젝트 기획서' 초안으로 종합</td>
-                                <td class="table-cell">(5-2) [아트 디렉터] 컬러 팔레트, 타이포그래피 정의<br>(5-3) [영상 디렉터] 스토리보드 제작</td>
-                                <td class="table-cell"><strong>기획:</strong> Workspace AI (Docs)<br><strong>아트:</strong> Whisk, ImageFX<br><strong>영상:</strong> Gemini, ImageFX</td>
+                                <td class="table-cell">(5-2) [아트 디렉터] 로고/타이틀 디자인 및 컬러/타이포그래피 시스템 정의</td>
+                                <td class="table-cell"><strong>기획:</strong> Workspace AI (Docs)<br><strong>아트:</strong> ImageFX, Whisk</td>
                             </tr>
                             <tr>
                                 <td class="table-cell text-center font-semibold">6주</td>
-                                <td class="table-cell">첫 영상 클립 제작</td>
-                                <td class="table-cell">(6-1) '프로젝트 기획서' 초안 피어 피드백</td>
-                                <td class="table-cell">(6-2) [아트 디렉터] 주요 배경 컨셉 아트 제작<br>(6-3) [영상 디렉터] 첫 핵심 장면 클립 생성</td>
-                                <td class="table-cell"><strong>기획:</strong> Workspace AI (Docs 댓글)<br><strong>아트:</strong> ImageFX<br><strong>영상:</strong> Flow & Vids</td>
+                                <td class="table-cell">영상 사전 제작</td>
+                                <td class="table-cell">(6-1) 기획서 초안 피어 피드백</td>
+                                <td class="table-cell">(6-2) [영상 디렉터] 스토리보드 제작<br>(6-3) [영상 디렉터] 첫 핵심 장면 클립 생성</td>
+                                <td class="table-cell"><strong>기획:</strong> Docs 댓글<br><strong>영상:</strong> Gemini, ImageFX, Flow</td>
                             </tr>
                             <tr>
                                 <td class="table-cell text-center font-semibold">7주</td>
@@ -328,13 +329,66 @@
             </div>
         </section>
         
-        <section id="journal" class="py-20">
+        <section id="process" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">AI 시대 창작 과정 5단계</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">우리 수업은 텍스트와 이미지가 서로 영감을 주고받으며 자라가는, 유기적인 창작 과정을 따릅니다.</p>
+                </div>
+                <div class="w-full overflow-x-auto">
+                     <table class="min-w-full bg-white border border-gray-200 text-sm">
+                        <thead class="bg-gray-50 text-gray-600 uppercase">
+                            <tr>
+                                <th class="table-cell">단계</th>
+                                <th class="table-cell">이름</th>
+                                <th class="table-cell">역할 및 정의</th>
+                                <th class="table-cell">핵심 질문</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 align-top">
+                            <tr>
+                                <td class="table-cell text-center font-bold">1</td>
+                                <td class="table-cell font-semibold">무드보드</td>
+                                <td class="table-cell"><strong>영감 수집:</strong> 프로젝트의 전체적인 '분위기'와 '감성(vive)'을 정의하고 팀과 공유하기 위해, 기존의 이미지, 컬러, 텍스처 등을 모아놓은 영감의 스크랩북. 감성의 방향성을설정하며,  디자이너에게 영감을 주는 단계. </td>
+                                <td class="table-cell italic">"어떤 <strong>느낌</strong>으로 만들까?"</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-bold">2</td>
+                                <td class="table-cell font-semibold">시각 컨셉 브리프</td>
+                                <td class="table-cell"><strong>감성의 언어화:</strong> 무드보드에서 얻은 추상적인 영감을, 제작하는 동료가 이해할 수 있도록 구체적인 텍스트 '설계도'로 번역한 문서. 스크랩북의 '느낌'을 디자이너가 이해할수 있도록 "벽은 베이지색(#F5F5DC)으로, 바닥은 오크 원목으로, 조명은 3000K 전구색으로 해주세요."</td>
+                                <td class="table-cell italic">"이 느낌을 <strong>어떻게 설명</strong>할까?"</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-bold">3</td>
+                                <td class="table-cell font-semibold">초기 컨셉 아트</td>
+                                <td class="table-cell"><strong>분위기 시각화:</strong> 설계도(시각컨셉 브리프)를 바탕으로, 프로젝트의 전체적인 '분위기'를 대표하는 한두 장의 핵심 이미지를 새롭게 창조. 이 그림을 통해 막연했던 분위기를 처음으로 눈으로 확인하고, 프로젝트의 전체적인 톤앤매너에 대한 구체적인 합의점을 찾게 됨.</td>
+                                <td class="table-cell italic">"우리의 세상은 이런 <strong>모습</strong>일거야."</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-bold">4</td>
+                                <td class="table-cell font-semibold">시놉시스 & 캐릭터 아크</td>
+                                <td class="table-cell"><strong>이야기 구체화:</strong> 시각화된 분위기: 컨셉아트에서 영감을 받아, 구체적인 이야기의 흐름(시놉시스)과 인물의 변화 과정(캐릭터 아크)을 글로 완성. 시각적 영감이 다시 이야기에 깊이를 더해줌. </td>
+                                <td class="table-cell italic">"이 세상에서 <strong>어떤 이야기</strong>가 펼쳐질까?"</td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell text-center font-bold">5</td>
+                                <td class="table-cell font-semibold">주요 캐릭터 디자인</td>
+                                <td class="table-cell"><strong>인물 시각화:</strong> 이야기가 구체화되었으니, 완성된 캐릭터 설정을 바탕으로, 주인공의 구체적인 외모, 복장, 표정 등을 담은 상세한 디자인 시안을 제작.</td>
+                                <td class="table-cell italic">"이 이야기의 <strong>주인공</strong>은 이렇게 생겼어."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="journal" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">AI 협업 플레이북: 성찰일지</h2>
                     <p class="mt-4 text-gray-600 max-w-2xl mx-auto">AI와의 협업 과정에서 얻은 성공, 실패, 발견을 기록하며 자신만의 AI 협업 방법론을 찾아가는 공간입니다. 이 기록은 학기 말 여러분의 성장을 증명하는 핵심 포트폴리오가 될 것입니다.</p>
                 </div>
-                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 space-y-6">
+                <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl border border-gray-200 p-8 space-y-6">
                     <div>
                         <h3 class="text-xl font-bold text-[#2A4A7D] border-b-2 border-gray-200 pb-2 mb-3">🎯 1. 오늘의 창작 과제</h3>
                         <p class="text-gray-600">오늘 내가 AI와 함께 해결하고자 했던 구체적인 목표는 무엇이었나요?</p>
@@ -359,15 +413,16 @@
             </div>
         </section>
 
-        <section id="resources" class="py-20 bg-white">
+        <section id="resources" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#2A4A7D]">수업 자료 바로가기</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">수업에 필요한 핵심 가이드와 성찰일지 템플릿입니다. 링크를 클릭하여 본인 구글 계정에 사본 복사한 후에 사용하세요.</p>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">수업에 필요한 핵심 가이드와 템플릿입니다. 링크를 클릭하여 본인 계정 드라이브에 각 스프레드시트의 사본을 만든 후에 사용하세요.</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://drive.google.com/drive/folders/1tE4pvT72eNDLpnk74VetMJHS8EyoDVN6?usp=sharing" target="_blank" class="bg-[#2A4A7D] text-white font-bold py-3 px-6 rounded-full hover:bg-[#1E3A6B] transition duration-300">프롬프트 가이드</a>
+                    <a href="https://drive.google.com/drive/folders/1tE4pvT72eNDLpnk74VetMJHS8EyoDVN6?usp=drive_link" target="_blank" class="bg-[#2A4A7D] text-white font-bold py-3 px-6 rounded-full hover:bg-[#1E3A6B] transition duration-300">프롬프트 가이드</a>
                     <a href="https://docs.google.com/spreadsheets/d/13zPHoDOOG9QhprksxTbUEy-canjIX-YNpzrmUFYDBD0/edit?usp=sharing" target="_blank" class="bg-green-700 text-white font-bold py-3 px-6 rounded-full hover:bg-green-800 transition duration-300">성찰일지</a>
+                    <a href="#process" class="bg-gray-500 text-white font-bold py-3 px-6 rounded-full hover:bg-gray-600 transition duration-300">AI 시대 창작 과정</a>
                 </div>
             </div>
         </section>
@@ -472,6 +527,5 @@ if (moduleFocusCtx) {
     </script>
 </body>
 </html>
-
 
 
